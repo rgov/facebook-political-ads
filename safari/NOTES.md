@@ -20,9 +20,10 @@ May this code be a useful starting point for porting other extensions to Safari.
 The user content script in `extension/src/content.js` is injected into all pages
 on `*.facebook.com` domains. This is configured in the `Info.plist` file.
 
-But as the content script uses `chrome.runtime.sendMessage()`, we inject the
-`safariglue.js` script first. This sets up a mock `chrome` object which
-translates the calls to `safari.extension.dispatchMessage()`. 
+But as the content script uses `chrome.runtime.sendMessage()`, an unavailable
+WebExtensions API, we inject the `safariglue.js` script first. This sets up a 
+mock `chrome` object that translates the calls to
+`safari.extension.dispatchMessage()`. 
 
 Messages are received by
 `SafariExtensionHandler.messageReceived(withName:from:userInfo:)` in the App
@@ -60,5 +61,5 @@ invokes the callbacks that were previously registered.
 
 ## Background Script
 
-The background script in `extension/src/background.js` is currently not
-executed.
+The background script in `extension/src/background.js` is loaded into a `WKWebView`
+off-screen. Message dispatch is handled mostly the same as the popup script.

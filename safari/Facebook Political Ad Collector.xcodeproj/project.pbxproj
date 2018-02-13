@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A6BD5EC2033338B00A0A094 /* Messaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BD5EB2033338B00A0A094 /* Messaging.swift */; };
+		2A6BD5F22033625400A0A094 /* BackgroundScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BD5F12033625400A0A094 /* BackgroundScript.swift */; };
 		2A9CB8E520326E9000E49BA7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9CB8E420326E9000E49BA7 /* Cocoa.framework */; };
 		2A9CB8E820326E9100E49BA7 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB8E720326E9100E49BA7 /* SafariExtensionHandler.swift */; };
 		2A9CB8EA20326E9100E49BA7 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB8E920326E9100E49BA7 /* SafariExtensionViewController.swift */; };
@@ -54,6 +56,8 @@
 /* Begin PBXFileReference section */
 		2A6BD5C72032FCC000A0A094 /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = SOURCE_ROOT; };
 		2A6BD5C9203329EB00A0A094 /* build_dist.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_dist.sh; sourceTree = "<group>"; };
+		2A6BD5EB2033338B00A0A094 /* Messaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messaging.swift; sourceTree = "<group>"; };
+		2A6BD5F12033625400A0A094 /* BackgroundScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundScript.swift; sourceTree = "<group>"; };
 		2A9CB8E220326E9000E49BA7 /* Ad Collector Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Ad Collector Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9CB8E420326E9000E49BA7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2A9CB8E720326E9100E49BA7 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
@@ -106,9 +110,11 @@
 				2AE9A29F20327A52000DED5B /* dist */,
 				2A6BD5C9203329EB00A0A094 /* build_dist.sh */,
 				2AE9A2AC2032EF66000DED5B /* safariglue.js */,
+				2A6BD5EB2033338B00A0A094 /* Messaging.swift */,
 				2A9CB8E720326E9100E49BA7 /* SafariExtensionHandler.swift */,
 				2A9CB8E920326E9100E49BA7 /* SafariExtensionViewController.swift */,
 				2A9CB8EB20326E9100E49BA7 /* SafariExtensionViewController.xib */,
+				2A6BD5F12033625400A0A094 /* BackgroundScript.swift */,
 				2A9CB8EE20326E9100E49BA7 /* Info.plist */,
 				2AE9A2AB2032C3E8000DED5B /* Extension.entitlements */,
 			);
@@ -282,8 +288,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A6BD5F22033625400A0A094 /* BackgroundScript.swift in Sources */,
 				2A9CB8EA20326E9100E49BA7 /* SafariExtensionViewController.swift in Sources */,
 				2A9CB8E820326E9100E49BA7 /* SafariExtensionHandler.swift in Sources */,
+				2A6BD5EC2033338B00A0A094 /* Messaging.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

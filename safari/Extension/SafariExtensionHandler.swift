@@ -8,26 +8,59 @@
 
 import SafariServices
 
+// MARK: - Message Dispatch
+
 class SafariExtensionHandler: SFSafariExtensionHandler {
+    let dispatcher = MessageDispatcher()
+    var badgeText = ""
+    
+    override init() {
+        super.init()
+        
+        // Do not register ourselves with the dispatcher; the documentation for
+        // chrome.runtime.sendMessage() says that it doesn't send to content
+        // scripts (such messages should be sent to a specific tab)
+        dispatcher.clients.append(BackgroundScript.shared)
+        dispatcher.clients.append(SafariExtensionViewController.shared)
+    }
     
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
-        // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
-        page.getPropertiesWithCompletionHandler { properties in
-            NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
-            
-            switch messageName {
-            case "setBadgeText":
-                self.setBadgeText(userInfo)
-            default:
-                NSLog("Ignoring unknown message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
-            }
+        
+        let name = messageName
+        guard let sender = userInfo?["sender"] as? String else {
+            NSLog("Message \(name) is missing the sender field")
+            return
+        }
+        guard let body = userInfo?["body"] as? String else {
+            NSLog("Message \(name) is missing the body field")
+            return
+        }
+        
+        switch (name) {
+        case "dispatchMessage":
+            // Just forward this message on for other scripts
+            dispatcher.pushMessage(body, sender: sender)
+        case "setBadgeText":
+            setBadgeText(body)
+        default:
+            NSLog("Unhandled message \(name)")
         }
     }
     
-    func setBadgeText(_ userInfo: [String: Any]?) {
-        guard let text = userInfo?["text"] else { return }
-        NSLog("would set badge text to \(text)")
+    func setBadgeText(_ body: String) {
+        do {
+            guard let data = body.data(using: .utf8) else { return }
+            badgeText = try JSONDecoder().decode(String.self, from: data)
+            SFSafariApplication.setToolbarItemsNeedUpdate()
+        } catch {
+            return
+        }
     }
+}
+
+// MARK: - Toolbar Item
+
+extension SafariExtensionHandler {
     
     // Only enable the toolbar button on *.facebook.com
     override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
@@ -44,7 +77,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                         return
                     }
 
-                    validationHandler(true, "")
+                    validationHandler(true, self.badgeText)
                 }
             }
         }

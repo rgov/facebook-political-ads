@@ -12,14 +12,19 @@ import WebKit
 class SafariExtensionViewController: SFSafariExtensionViewController {
     static let shared = SafariExtensionViewController()
     
+    let dispatcher = MessageDispatcher()
+    
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
+        // Yuck
+        dispatcher.clients.append(BackgroundScript.shared)
+        
         injectGlueCode()
         
         let url = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "dist")
         webView.loadFileURL(url!, allowingReadAccessTo: url!)
-        // Bundle.main.resourceURL!.appendingPathComponent("build")
+        // Bundle.main.resourceURL!.appendingPathComponent("dist")
     }
     
     // Configures the WebView with our WebExtension API glue code
@@ -60,8 +65,58 @@ extension SafariExtensionViewController: WKNavigationDelegate {
     }
 }
 
+extension SafariExtensionViewController: MessageDispatchTarget {
+    private func escape(_ str: String) -> String {
+        return str.replacingOccurrences(of: "\\", with: "\\\\")
+                  .replacingOccurrences(of: "'", with: "\\'")
+    }
+    
+    func pushMessage(_ message: String, sender: String) {
+        guard webView != nil else {
+            NSLog("SafariExtensionViewController: Dropping message because popover not ready");
+            return
+        }
+        
+        // FIXME: Implement string escaping (urgent)
+        webView.evaluateJavaScript("glue.receiveMessage('\(escape(sender))', '\(escape(message))')") {
+            _, error in
+            
+            guard error == nil else {
+                NSLog("SafariExtensionViewController failed: \(error?.localizedDescription ?? "unknown")")
+                return
+            }
+        }
+    }
+}
+
 extension SafariExtensionViewController: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        NSLog("Received message \(message.body)")
+        
+        guard let contents = message.body as? [String: Any] else {
+            NSLog("SafariExtensionViewController: Message is in an unsupported format")
+            return
+        }
+        
+        guard let name = contents["name"] as? String else {
+            NSLog("SafariExtensionViewController: Message is missing the name field")
+            return
+        }
+        guard let sender = contents["sender"] as? String else {
+            NSLog("SafariExtensionViewController: Message \(name) is missing the sender field")
+            return
+        }
+        guard let body = contents["body"] as? String else {
+            NSLog("SafariExtensionViewController: Message \(name) is missing the body field")
+            return
+        }
+        
+        if name != "dispatchMessage" {
+            NSLog("SafariExtensionViewController: Dropping message \(name)")
+            return
+        }
+
+        // Forward it
+        NSLog("SafariExtensionViewController: Forwarding message \(body) from \(sender)")
+        dispatcher.pushMessage(body, sender: sender)
     }
 }
