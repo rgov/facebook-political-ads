@@ -1,4 +1,3 @@
-import "safariglue.js";
 import React from "react";
 import { render } from "react-dom";
 import thunkMiddleware from "redux-thunk";

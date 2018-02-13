@@ -1,4 +1,3 @@
-import "safariglue.js";
 import { parser, TIMELINE_SELECTOR, SIDEBAR_SELECTOR } from "parser";
 import debounce from "lodash/debounce";
 

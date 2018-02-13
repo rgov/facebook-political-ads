@@ -32,6 +32,10 @@
 		<array>
 			<dict>
 				<key>Script</key>
+				<string>safariglue.js</string>
+			</dict>
+			<dict>
+				<key>Script</key>
 				<string>build/content.js</string>
 			</dict>
 		</array>

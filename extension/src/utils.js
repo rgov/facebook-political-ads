@@ -1,4 +1,3 @@
-import "safariglue.js";
 import { sortBy } from "lodash";
 
 const adForRequest = ad => ({
