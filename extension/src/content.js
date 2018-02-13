@@ -1,3 +1,4 @@
+import "safariglue.js";
 import { parser, TIMELINE_SELECTOR, SIDEBAR_SELECTOR } from "parser";
 import debounce from "lodash/debounce";
 
@@ -25,10 +26,16 @@ const sendAds = function() {
   );
 
   scraper.then(() => {
-    chrome.runtime.sendMessage(results.filter(i => i));
+    let message = results.filter(i => i);
+    chrome.runtime.sendMessage(message);
     running = false;
   });
 };
 
-let a = new MutationObserver(debounce(sendAds, 5000));
-a.observe(document.body, { childList: true, subtree: true });
+// On Safari, document.body is null until the document has been loaded
+document.addEventListener("DOMContentLoaded", function(event) {
+  let f = debounce(sendAds, 5000);
+  let mo = new MutationObserver(f);
+  mo.observe(document.body, { childList: true, subtree: true });
+  f(); // run immediately, don't wait for a mutation
+});

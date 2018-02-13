@@ -1,0 +1,577 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A9CB8E520326E9000E49BA7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9CB8E420326E9000E49BA7 /* Cocoa.framework */; };
+		2A9CB8E820326E9100E49BA7 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB8E720326E9100E49BA7 /* SafariExtensionHandler.swift */; };
+		2A9CB8EA20326E9100E49BA7 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB8E920326E9100E49BA7 /* SafariExtensionViewController.swift */; };
+		2A9CB8ED20326E9100E49BA7 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A9CB8EB20326E9100E49BA7 /* SafariExtensionViewController.xib */; };
+		2A9CB8F020326E9100E49BA7 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 2A9CB8EF20326E9100E49BA7 /* script.js */; };
+		2A9CB8F620326E9100E49BA7 /* Ad Collector Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A9CB8E220326E9000E49BA7 /* Ad Collector Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2AB0911B20326E34000D8A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0911A20326E34000D8A0C /* AppDelegate.swift */; };
+		2AB0911D20326E34000D8A0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0911C20326E34000D8A0C /* ViewController.swift */; };
+		2AB0911F20326E34000D8A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AB0911E20326E34000D8A0C /* Assets.xcassets */; };
+		2AB0912220326E34000D8A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB0912020326E34000D8A0C /* Main.storyboard */; };
+		2AE9A2A020327A53000DED5B /* build in Resources */ = {isa = PBXBuildFile; fileRef = 2AE9A29F20327A52000DED5B /* build */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A9CB8F420326E9100E49BA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AB0910F20326E34000D8A0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A9CB8E120326E9000E49BA7;
+			remoteInfo = "Ad Collector Extension";
+		};
+		2AE9A29D203279E5000DED5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AB0910F20326E34000D8A0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AE9A29920327938000DED5B;
+			remoteInfo = "Shared Extension Resources";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2A9CB8FA20326E9100E49BA7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2A9CB8F620326E9100E49BA7 /* Ad Collector Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2A9CB8E220326E9000E49BA7 /* Ad Collector Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Ad Collector Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A9CB8E420326E9000E49BA7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		2A9CB8E720326E9100E49BA7 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
+		2A9CB8E920326E9100E49BA7 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
+		2A9CB8EC20326E9100E49BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
+		2A9CB8EE20326E9100E49BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A9CB8EF20326E9100E49BA7 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+		2A9CB8F320326E9100E49BA7 /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Extension.entitlements; sourceTree = "<group>"; };
+		2AB0911720326E34000D8A0C /* Facebook Political Ad Collector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Facebook Political Ad Collector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AB0911A20326E34000D8A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2AB0911C20326E34000D8A0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2AB0911E20326E34000D8A0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2AB0912120326E34000D8A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2AB0912320326E34000D8A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AB0912420326E34000D8A0C /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
+		2AE9A2962032704E000DED5B /* .. */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ..; sourceTree = SOURCE_ROOT; };
+		2AE9A29F20327A52000DED5B /* build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = build; path = ../extension/build; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A9CB8DF20326E9000E49BA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A9CB8E520326E9000E49BA7 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AB0911420326E34000D8A0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A9CB8E320326E9000E49BA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB8E420326E9000E49BA7 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A9CB8E620326E9000E49BA7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2AE9A29F20327A52000DED5B /* build */,
+				2A9CB8E720326E9100E49BA7 /* SafariExtensionHandler.swift */,
+				2A9CB8E920326E9100E49BA7 /* SafariExtensionViewController.swift */,
+				2A9CB8EB20326E9100E49BA7 /* SafariExtensionViewController.xib */,
+				2A9CB8EE20326E9100E49BA7 /* Info.plist */,
+				2A9CB8EF20326E9100E49BA7 /* script.js */,
+				2A9CB8F320326E9100E49BA7 /* Extension.entitlements */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2AB0910E20326E34000D8A0C = {
+			isa = PBXGroup;
+			children = (
+				2AE9A2962032704E000DED5B /* .. */,
+				2AB0911920326E34000D8A0C /* App */,
+				2A9CB8E620326E9000E49BA7 /* Extension */,
+				2A9CB8E320326E9000E49BA7 /* Frameworks */,
+				2AB0911820326E34000D8A0C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2AB0911820326E34000D8A0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AB0911720326E34000D8A0C /* Facebook Political Ad Collector.app */,
+				2A9CB8E220326E9000E49BA7 /* Ad Collector Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2AB0911920326E34000D8A0C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2AB0911A20326E34000D8A0C /* AppDelegate.swift */,
+				2AB0911C20326E34000D8A0C /* ViewController.swift */,
+				2AB0911E20326E34000D8A0C /* Assets.xcassets */,
+				2AB0912020326E34000D8A0C /* Main.storyboard */,
+				2AB0912320326E34000D8A0C /* Info.plist */,
+				2AB0912420326E34000D8A0C /* App.entitlements */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		2AE9A29920327938000DED5B /* Shared Extension Resources */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "run build";
+			buildConfigurationList = 2AE9A29A20327938000DED5B /* Build configuration list for PBXLegacyTarget "Shared Extension Resources" */;
+			buildPhases = (
+			);
+			buildToolPath = npm;
+			buildWorkingDirectory = "$(PROJECT_DIR)/../extension";
+			dependencies = (
+			);
+			name = "Shared Extension Resources";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Shared Extension";
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		2A9CB8E120326E9000E49BA7 /* Ad Collector Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A9CB8F920326E9100E49BA7 /* Build configuration list for PBXNativeTarget "Ad Collector Extension" */;
+			buildPhases = (
+				2A9CB8DE20326E9000E49BA7 /* Sources */,
+				2A9CB8DF20326E9000E49BA7 /* Frameworks */,
+				2A9CB8E020326E9000E49BA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2AE9A29E203279E5000DED5B /* PBXTargetDependency */,
+			);
+			name = "Ad Collector Extension";
+			productName = "Ad Collector Extension";
+			productReference = 2A9CB8E220326E9000E49BA7 /* Ad Collector Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		2AB0911620326E34000D8A0C /* Facebook Political Ad Collector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AB0912720326E34000D8A0C /* Build configuration list for PBXNativeTarget "Facebook Political Ad Collector" */;
+			buildPhases = (
+				2AB0911320326E34000D8A0C /* Sources */,
+				2AB0911420326E34000D8A0C /* Frameworks */,
+				2AB0911520326E34000D8A0C /* Resources */,
+				2A9CB8FA20326E9100E49BA7 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A9CB8F520326E9100E49BA7 /* PBXTargetDependency */,
+			);
+			name = "Facebook Political Ad Collector";
+			productName = "Facebook Political Ad Collector";
+			productReference = 2AB0911720326E34000D8A0C /* Facebook Political Ad Collector.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2AB0910F20326E34000D8A0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = ProPublica;
+				TargetAttributes = {
+					2A9CB8E120326E9000E49BA7 = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+					};
+					2AB0911620326E34000D8A0C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					2AE9A29920327938000DED5B = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2AB0911220326E34000D8A0C /* Build configuration list for PBXProject "Facebook Political Ad Collector" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2AB0910E20326E34000D8A0C;
+			productRefGroup = 2AB0911820326E34000D8A0C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2AE9A29920327938000DED5B /* Shared Extension Resources */,
+				2AB0911620326E34000D8A0C /* Facebook Political Ad Collector */,
+				2A9CB8E120326E9000E49BA7 /* Ad Collector Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A9CB8E020326E9000E49BA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A9CB8ED20326E9100E49BA7 /* SafariExtensionViewController.xib in Resources */,
+				2A9CB8F020326E9100E49BA7 /* script.js in Resources */,
+				2AE9A2A020327A53000DED5B /* build in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AB0911520326E34000D8A0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AB0911F20326E34000D8A0C /* Assets.xcassets in Resources */,
+				2AB0912220326E34000D8A0C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A9CB8DE20326E9000E49BA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A9CB8EA20326E9100E49BA7 /* SafariExtensionViewController.swift in Sources */,
+				2A9CB8E820326E9100E49BA7 /* SafariExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AB0911320326E34000D8A0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AB0911D20326E34000D8A0C /* ViewController.swift in Sources */,
+				2AB0911B20326E34000D8A0C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A9CB8F520326E9100E49BA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A9CB8E120326E9000E49BA7 /* Ad Collector Extension */;
+			targetProxy = 2A9CB8F420326E9100E49BA7 /* PBXContainerItemProxy */;
+		};
+		2AE9A29E203279E5000DED5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2AE9A29920327938000DED5B /* Shared Extension Resources */;
+			targetProxy = 2AE9A29D203279E5000DED5B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2A9CB8EB20326E9100E49BA7 /* SafariExtensionViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A9CB8EC20326E9100E49BA7 /* Base */,
+			);
+			name = SafariExtensionViewController.xib;
+			sourceTree = "<group>";
+		};
+		2AB0912020326E34000D8A0C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AB0912120326E34000D8A0C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2A9CB8F720326E9100E49BA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G8YUU89437;
+				INFOPLIST_FILE = Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.propublica.Facebook-Political-Ad-Collector.Ad-Collector-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		2A9CB8F820326E9100E49BA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G8YUU89437;
+				INFOPLIST_FILE = Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.propublica.Facebook-Political-Ad-Collector.Ad-Collector-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		2AB0912520326E34000D8A0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2AB0912620326E34000D8A0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		2AB0912820326E34000D8A0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = G8YUU89437;
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.propublica.Facebook-Political-Ad-Collector";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		2AB0912920326E34000D8A0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = G8YUU89437;
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.propublica.Facebook-Political-Ad-Collector";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		2AE9A29B20327938000DED5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = G8YUU89437;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2AE9A29C20327938000DED5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = G8YUU89437;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A9CB8F920326E9100E49BA7 /* Build configuration list for PBXNativeTarget "Ad Collector Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A9CB8F720326E9100E49BA7 /* Debug */,
+				2A9CB8F820326E9100E49BA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AB0911220326E34000D8A0C /* Build configuration list for PBXProject "Facebook Political Ad Collector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AB0912520326E34000D8A0C /* Debug */,
+				2AB0912620326E34000D8A0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AB0912720326E34000D8A0C /* Build configuration list for PBXNativeTarget "Facebook Political Ad Collector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AB0912820326E34000D8A0C /* Debug */,
+				2AB0912920326E34000D8A0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AE9A29A20327938000DED5B /* Build configuration list for PBXLegacyTarget "Shared Extension Resources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AE9A29B20327938000DED5B /* Debug */,
+				2AE9A29C20327938000DED5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2AB0910F20326E34000D8A0C /* Project object */;
+}

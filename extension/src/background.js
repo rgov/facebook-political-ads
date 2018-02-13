@@ -1,3 +1,4 @@
+import "safariglue.js";
 import {
   sendAds,
   mergeAds,

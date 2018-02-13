@@ -21,13 +21,23 @@ The extension popup is a [preact](https://preactjs.com/) application and you can
     npm install
     npm run watch
 
-If you are a Firefox user you can open a clean browser instance with:
+#### Firefox
+
+You can open a clean Firefox browser instance with:
 
     npm run ff
 
 and any changes will automatically refresh the extension. (You'll need webpack installed globally.)
 
+#### Chrome
+
 In Chrome you'll need to add an unpacked extension by following these [directions](https://developer.chrome.com/extensions/getstarted).
+
+#### Safari
+
+The Xcode project in the `safari/` directory builds a native macOS app with an embedded Safari app extension. The extension shares code with other browsers
+with some additional glue code.
+
 
 ### Backend
 
@@ -50,7 +60,7 @@ This will give a server running at `localhost:8080`. You will also need to build
 
 This will build the required static assets (javascript & css) to view the admin console at `localhost:8080/facebook-ads/`.
 
-If you make any changes to the database, after you run the migration, you'll want to update `the schema with diesel print-schema > src/schema.rs`.
+If you make any changes to the database, after you run the migration, you'll want to update the schema with `diesel print-schema > src/schema.rs`.
 
 The backend has both unit and integration tests. You will need to set up a test database alongside your actual database in order to run the integration tests. To do this, you will need to the same as above, but substitute out the database test URL:
 
