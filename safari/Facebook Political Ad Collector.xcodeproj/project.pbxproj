@@ -53,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		2A6BD5C72032FCC000A0A094 /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = SOURCE_ROOT; };
+		2A6BD5C9203329EB00A0A094 /* build_dist.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_dist.sh; sourceTree = "<group>"; };
 		2A9CB8E220326E9000E49BA7 /* Ad Collector Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Ad Collector Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9CB8E420326E9000E49BA7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2A9CB8E720326E9100E49BA7 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				2AE9A29F20327A52000DED5B /* dist */,
+				2A6BD5C9203329EB00A0A094 /* build_dist.sh */,
 				2AE9A2AC2032EF66000DED5B /* safariglue.js */,
 				2A9CB8E720326E9100E49BA7 /* SafariExtensionHandler.swift */,
 				2A9CB8E920326E9100E49BA7 /* SafariExtensionViewController.swift */,
@@ -152,12 +154,12 @@
 /* Begin PBXLegacyTarget section */
 		2AE9A29920327938000DED5B /* Shared Extension Resources */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "run distbuild";
+			buildArgumentsString = "$(ACTION)";
 			buildConfigurationList = 2AE9A29A20327938000DED5B /* Build configuration list for PBXLegacyTarget "Shared Extension Resources" */;
 			buildPhases = (
 			);
-			buildToolPath = npm;
-			buildWorkingDirectory = "$(PROJECT_DIR)/../extension";
+			buildToolPath = "$(PROJECT_DIR)/Extension/build_dist.sh";
+			buildWorkingDirectory = "";
 			dependencies = (
 			);
 			name = "Shared Extension Resources";
