@@ -35,8 +35,7 @@ In Chrome you'll need to add an unpacked extension by following these [direction
 
 #### Safari
 
-The Xcode project in the `safari/` directory builds a native macOS app with an embedded Safari app extension. The extension shares code with other browsers
-with some additional glue code.
+The Xcode project in the `safari/` directory builds a native macOS app with an embedded Safari app extension. The extension shares code with other browsers with some additional glue code.
 
 
 ### Backend
