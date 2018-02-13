@@ -57,7 +57,6 @@
 		2A9CB8E920326E9100E49BA7 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		2A9CB8EC20326E9100E49BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		2A9CB8EE20326E9100E49BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A9CB8F320326E9100E49BA7 /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Extension.entitlements; sourceTree = "<group>"; };
 		2AB0911720326E34000D8A0C /* Facebook Political Ad Collector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Facebook Political Ad Collector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AB0911A20326E34000D8A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AB0911C20326E34000D8A0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		2AB0912420326E34000D8A0C /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
 		2AE9A2962032704E000DED5B /* .. */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ..; sourceTree = SOURCE_ROOT; };
 		2AE9A29F20327A52000DED5B /* build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = build; path = ../extension/build; sourceTree = SOURCE_ROOT; };
+		2AE9A2AB2032C3E8000DED5B /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Extension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 				2A9CB8E920326E9100E49BA7 /* SafariExtensionViewController.swift */,
 				2A9CB8EB20326E9100E49BA7 /* SafariExtensionViewController.xib */,
 				2A9CB8EE20326E9100E49BA7 /* Info.plist */,
-				2A9CB8F320326E9100E49BA7 /* Extension.entitlements */,
+				2AE9A2AB2032C3E8000DED5B /* Extension.entitlements */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -212,6 +212,11 @@
 					2A9CB8E120326E9000E49BA7 = {
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					2AB0911620326E34000D8A0C = {
 						CreatedOnToolsVersion = 9.2;
