@@ -35,7 +35,7 @@ case "$1" in
     clean)
         rm -Rf "${EXTENSION_DIR}/dist"
         ;;
-    build)
+    ""|build)
         if (last_build_succeeded && ! dirty_sources); then
             echo "No reason to rebuild, have a nice day"
         else
@@ -45,10 +45,6 @@ case "$1" in
             touch "dist/.built"
             popd
         fi
-        ;;
-    "")
-        echo "usage: $0 [clean | build]"
-        exit 1
         ;;
     *)
         echo "error: unknown subcommand $1" 1>&2
