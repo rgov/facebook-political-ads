@@ -17,6 +17,7 @@ if (typeof safari !== 'undefined' && typeof chrome === 'undefined') {
   };
 }
 
+
 // The following glue code is for code hosted in the App Extension process (such
 // as the background script)
 if (typeof window.webkit !== 'undefined' && typeof chrome === 'undefined') {
@@ -27,6 +28,25 @@ if (typeof window.webkit !== 'undefined' && typeof chrome === 'undefined') {
           message: 'sendMessage',
           body: message
         });
+      },
+      
+      onMessage: {
+        // When our App Extension wants to call back to a listener who has
+        // registered with chrome.onMessage.addListener(), we will invoke
+        // chrome.runtime.onMessage.__listen(message)
+        __listeners: [],
+        
+        __listen: function (message) {
+          this.__listeners.forEach(function (callback) {
+            callback(message, null, function () {
+              console.error('Glue code does not support sendResponse');
+            });
+          });
+        },
+        
+        addListener: function(callback) {
+          this.__listeners.push(callback);
+        },
       },
     },
   }

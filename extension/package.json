@@ -7,6 +7,7 @@
     "test": "node test/test.js",
     "build": "webpack --progress",
     "watch": "webpack -w --progress",
+    "distbuild": "NODE_ENV=production webpack --progress -p",
     "dist": "NODE_ENV=production webpack --progress -p && web-ext build -s dist",
     "ff": "web-ext run -s build"
   },

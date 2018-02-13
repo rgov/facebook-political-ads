@@ -15,9 +15,23 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
-        let url = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "build")
+        injectGlueCode()
+        
+        let url = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "dist")
         webView.loadFileURL(url!, allowingReadAccessTo: url!)
         // Bundle.main.resourceURL!.appendingPathComponent("build")
+    }
+    
+    // Configures the WebView with our WebExtension API glue code
+    private func injectGlueCode() {
+        let url = Bundle.main.url(forResource: "safariglue", withExtension: "js")
+        let source = try! String(contentsOf: url!, encoding: .utf8)
+
+        let userScript = WKUserScript(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: false)
+        
+        let ucctrl = webView.configuration.userContentController
+        ucctrl.add(self, name: "bridge")
+        ucctrl.addUserScript(userScript)
     }
     
     // Resize the popover to match the size of document.body
@@ -43,5 +57,11 @@ extension SafariExtensionViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         // Keep the popover's size constrained to document.body
         resizeToContent()
+    }
+}
+
+extension SafariExtensionViewController: WKScriptMessageHandler {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        NSLog("Received message \(message.body)")
     }
 }

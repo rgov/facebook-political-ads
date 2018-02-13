@@ -36,7 +36,7 @@
 			</dict>
 			<dict>
 				<key>Script</key>
-				<string>build/content.js</string>
+				<string>dist/content.js</string>
 			</dict>
 		</array>
 		<key>SFSafariToolbarItem</key>
@@ -46,7 +46,7 @@
 			<key>Identifier</key>
 			<string>Button</string>
 			<key>Image</key>
-			<string>build/assets/icon128.png</string>
+			<string>dist/assets/icon128.png</string>
 			<key>Label</key>
 			<string>Facebook Political Ad Collector</string>
 		</dict>
