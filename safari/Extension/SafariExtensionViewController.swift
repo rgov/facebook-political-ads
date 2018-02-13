@@ -15,11 +15,33 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
-        self.preferredContentSize = self.view.frame.size
-        
-        NSLog("webView is \(SafariExtensionViewController.shared.webView)")
-        let myURL = URL(string: "https://www.apple.com")
-        let myRequest = URLRequest(url: myURL!)
-        webView.load(myRequest)
+        let url = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "build")
+        webView.loadFileURL(url!, allowingReadAccessTo: url!)
+        // Bundle.main.resourceURL!.appendingPathComponent("build")
+    }
+    
+    // Resize the popover to match the size of document.body
+    private func resizeToContent() {
+        let js = "let css = window.getComputedStyle(document.body); [ css.width, css.height ]"
+        webView.evaluateJavaScript(js) {
+            result, error in
+            
+            guard let result = result as? [String], error == nil else {
+                NSLog("Failed to get preferred content size: \(error?.localizedDescription ?? "unknown")")
+                return
+            }
+            
+            let width = (result[0] as NSString).floatValue
+            let height = (result[1] as NSString).floatValue
+            self.view.frame.size = NSMakeSize(CGFloat(width), CGFloat(height))
+            self.preferredContentSize = self.view.frame.size
+        }
+    }
+}
+
+extension SafariExtensionViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        // Keep the popover's size constrained to document.body
+        resizeToContent()
     }
 }
