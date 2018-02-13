@@ -11,7 +11,6 @@
 		2A9CB8E820326E9100E49BA7 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB8E720326E9100E49BA7 /* SafariExtensionHandler.swift */; };
 		2A9CB8EA20326E9100E49BA7 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB8E920326E9100E49BA7 /* SafariExtensionViewController.swift */; };
 		2A9CB8ED20326E9100E49BA7 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A9CB8EB20326E9100E49BA7 /* SafariExtensionViewController.xib */; };
-		2A9CB8F020326E9100E49BA7 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 2A9CB8EF20326E9100E49BA7 /* script.js */; };
 		2A9CB8F620326E9100E49BA7 /* Ad Collector Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A9CB8E220326E9000E49BA7 /* Ad Collector Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2AB0911B20326E34000D8A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0911A20326E34000D8A0C /* AppDelegate.swift */; };
 		2AB0911D20326E34000D8A0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0911C20326E34000D8A0C /* ViewController.swift */; };
@@ -58,7 +57,6 @@
 		2A9CB8E920326E9100E49BA7 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		2A9CB8EC20326E9100E49BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		2A9CB8EE20326E9100E49BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A9CB8EF20326E9100E49BA7 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
 		2A9CB8F320326E9100E49BA7 /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Extension.entitlements; sourceTree = "<group>"; };
 		2AB0911720326E34000D8A0C /* Facebook Political Ad Collector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Facebook Political Ad Collector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AB0911A20326E34000D8A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				2A9CB8E920326E9100E49BA7 /* SafariExtensionViewController.swift */,
 				2A9CB8EB20326E9100E49BA7 /* SafariExtensionViewController.xib */,
 				2A9CB8EE20326E9100E49BA7 /* Info.plist */,
-				2A9CB8EF20326E9100E49BA7 /* script.js */,
 				2A9CB8F320326E9100E49BA7 /* Extension.entitlements */,
 			);
 			path = Extension;
@@ -252,7 +249,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A9CB8ED20326E9100E49BA7 /* SafariExtensionViewController.xib in Resources */,
-				2A9CB8F020326E9100E49BA7 /* script.js in Resources */,
 				2AE9A2A020327A53000DED5B /* build in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
