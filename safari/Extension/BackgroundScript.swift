@@ -16,7 +16,7 @@ class BackgroundScript: NSObject {
 
     private let webView = WKWebView()
     
-    private let html = """
+    private let default_html = """
     <!DOCTYPE html>
     <html>
         <head>
@@ -24,10 +24,22 @@ class BackgroundScript: NSObject {
             <title>Background Script Host</title>
         </head>
         <body>
-            <script type="text/javascript" src="background.js"></script>
+            <script type="text/javascript" src="<%placeholder%>"></script>
         </body>
     </html>
     """
+    
+    convenience init (withJavaScriptFrom url: URL, baseURL: URL?) {
+        self.init()
+        // TODO: How can we restrict what resources are available?
+        let html = default_html.replacingOccurrences(of: "<%placeholder%>", with: url.absoluteString)
+        webView.loadHTMLString(html, baseURL: baseURL)
+    }
+    
+    convenience init (withHTMLFrom url: URL, baseURL: URL?) {
+        self.init()
+        webView.loadFileURL(url, allowingReadAccessTo: baseURL ?? url)
+    }
     
     override init() {
         super.init()
@@ -36,9 +48,6 @@ class BackgroundScript: NSObject {
         dispatcher.clients.append(SafariExtensionViewController.shared)
         
         injectGlueCode()
-        
-        let url = Bundle.main.resourceURL!.appendingPathComponent("dist")
-        webView.loadHTMLString(html, baseURL: url)
     }
     
     // Copy & pasted from SafariExtensionViewController.swift, TODO: refactor

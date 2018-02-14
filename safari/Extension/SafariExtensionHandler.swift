@@ -20,7 +20,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         // Do not register ourselves with the dispatcher; the documentation for
         // chrome.runtime.sendMessage() says that it doesn't send to content
         // scripts (such messages should be sent to a specific tab)
-        dispatcher.clients.append(BackgroundScript.shared)
+        dispatcher.clients.append(BackgroundScriptManager.default)
         dispatcher.clients.append(SafariExtensionViewController.shared)
     }
     

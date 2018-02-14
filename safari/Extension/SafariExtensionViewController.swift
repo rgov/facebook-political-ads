@@ -18,7 +18,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     
     override func viewDidLoad() {
         // Yuck
-        dispatcher.clients.append(BackgroundScript.shared)
+        dispatcher.clients.append(BackgroundScriptManager.default)
         
         injectGlueCode()
         
