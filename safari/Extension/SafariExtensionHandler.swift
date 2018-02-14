@@ -62,25 +62,8 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 
 extension SafariExtensionHandler {
     
-    // Only enable the toolbar button on *.facebook.com
     override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
-        window.getActiveTab { tab in
-            guard let tab = tab else { validationHandler(false, ""); return }
-            tab.getActivePage { page in
-                guard let page = page else { validationHandler(false, ""); return }
-                page.getPropertiesWithCompletionHandler { properties in
-                    guard let properties = properties else { validationHandler(false, ""); return }
-                    guard let host = properties.url?.host else { validationHandler(false, ""); return }
-                    
-                    guard host.range(of: "(^|[.])facebook.com$", options: .regularExpression, range: nil, locale: nil) != nil else {
-                        validationHandler(false, "")
-                        return
-                    }
-
-                    validationHandler(true, self.badgeText)
-                }
-            }
-        }
+        validationHandler(true, self.badgeText)
     }
     
     override func popoverViewController() -> SFSafariExtensionViewController {
