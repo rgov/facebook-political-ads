@@ -7,21 +7,31 @@
 //
 
 import Cocoa
+import WebKit
 
 class ViewController: NSViewController {
+    
+    @IBOutlet var webView: WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Load the popup resource file
+        let url = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "content")
+        // let dir = Bundle.main.resourceURL!.appendingPathComponent("content", isDirectory: true)
+        webView.loadFileURL(url!, allowingReadAccessTo: url!)
     }
+}
 
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
+
+// MARK: - Resize to Fit
+
+extension ViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.getContentSize() { size in
+            self.view.window!.setContentSize(size)
+            self.view.window!.center()
         }
     }
-
-
 }
 

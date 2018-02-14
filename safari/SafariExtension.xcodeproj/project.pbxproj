@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A59E6B720347FC000869122 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A59E6B620347FC000869122 /* Main.storyboard */; };
 		2A6BD5EC2033338B00A0A094 /* Messaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BD5EB2033338B00A0A094 /* Messaging.swift */; };
 		2A6BD5F22033625400A0A094 /* BackgroundScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BD5F12033625400A0A094 /* BackgroundScript.swift */; };
 		2A6BD5F42033FCAB00A0A094 /* BackgroundScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BD5F32033FCAB00A0A094 /* BackgroundScriptManager.swift */; };
 		2A6BD5F62033FEA700A0A094 /* ExtensionManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BD5F52033FEA700A0A094 /* ExtensionManifest.swift */; };
 		2A6BD5F82034278200A0A094 /* MessagingWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BD5F72034278200A0A094 /* MessagingWebView.swift */; };
+		2A8992EB2034886800109A0E /* WebView+GetContentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACF3E212034445E005E4C6C /* WebView+GetContentSize.swift */; };
+		2A8992EC2034886800109A0E /* WebView+GetContentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACF3E212034445E005E4C6C /* WebView+GetContentSize.swift */; };
 		2A9CB8E520326E9000E49BA7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9CB8E420326E9000E49BA7 /* Cocoa.framework */; };
 		2A9CB8E820326E9100E49BA7 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB8E720326E9100E49BA7 /* SafariExtensionHandler.swift */; };
 		2A9CB8EA20326E9100E49BA7 /* ExtensionPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB8E920326E9100E49BA7 /* ExtensionPopoverViewController.swift */; };
@@ -20,7 +23,7 @@
 		2AB0911B20326E34000D8A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0911A20326E34000D8A0C /* AppDelegate.swift */; };
 		2AB0911D20326E34000D8A0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0911C20326E34000D8A0C /* ViewController.swift */; };
 		2AB0911F20326E34000D8A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AB0911E20326E34000D8A0C /* Assets.xcassets */; };
-		2AB0912220326E34000D8A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB0912020326E34000D8A0C /* Main.storyboard */; };
+		2ACF3E1F2034436A005E4C6C /* content in Resources */ = {isa = PBXBuildFile; fileRef = 2ACF3E1E2034436A005E4C6C /* content */; };
 		2AE9A2A020327A53000DED5B /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 2AE9A29F20327A52000DED5B /* dist */; };
 		2AE9A2AD2032EF66000DED5B /* safariglue.js in Resources */ = {isa = PBXBuildFile; fileRef = 2AE9A2AC2032EF66000DED5B /* safariglue.js */; };
 /* End PBXBuildFile section */
@@ -57,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A59E6B620347FC000869122 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2A6BD5C72032FCC000A0A094 /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = SOURCE_ROOT; };
 		2A6BD5C9203329EB00A0A094 /* build_dist.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_dist.sh; sourceTree = "<group>"; };
 		2A6BD5EB2033338B00A0A094 /* Messaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messaging.swift; sourceTree = "<group>"; };
@@ -74,9 +78,10 @@
 		2AB0911A20326E34000D8A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AB0911C20326E34000D8A0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2AB0911E20326E34000D8A0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2AB0912120326E34000D8A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2AB0912320326E34000D8A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AB0912420326E34000D8A0C /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
+		2ACF3E1E2034436A005E4C6C /* content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = content; sourceTree = "<group>"; };
+		2ACF3E212034445E005E4C6C /* WebView+GetContentSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebView+GetContentSize.swift"; sourceTree = "<group>"; };
 		2AE9A2962032704E000DED5B /* .. */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ..; sourceTree = SOURCE_ROOT; };
 		2AE9A29F20327A52000DED5B /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dist; path = ../extension/dist; sourceTree = SOURCE_ROOT; };
 		2AE9A2AB2032C3E8000DED5B /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Extension.entitlements; sourceTree = "<group>"; };
@@ -135,6 +140,7 @@
 			children = (
 				2A6BD5C72032FCC000A0A094 /* NOTES.md */,
 				2AE9A2962032704E000DED5B /* .. */,
+				2ACF3E202034442B005E4C6C /* Shared */,
 				2AB0911920326E34000D8A0C /* App */,
 				2A9CB8E620326E9000E49BA7 /* Extension */,
 				2A9CB8E320326E9000E49BA7 /* Frameworks */,
@@ -156,12 +162,21 @@
 			children = (
 				2AB0911A20326E34000D8A0C /* AppDelegate.swift */,
 				2AB0911C20326E34000D8A0C /* ViewController.swift */,
+				2A59E6B620347FC000869122 /* Main.storyboard */,
 				2AB0911E20326E34000D8A0C /* Assets.xcassets */,
-				2AB0912020326E34000D8A0C /* Main.storyboard */,
+				2ACF3E1E2034436A005E4C6C /* content */,
 				2AB0912320326E34000D8A0C /* Info.plist */,
 				2AB0912420326E34000D8A0C /* App.entitlements */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		2ACF3E202034442B005E4C6C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				2ACF3E212034445E005E4C6C /* WebView+GetContentSize.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,7 +265,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2AB0911220326E34000D8A0C /* Build configuration list for PBXProject "Facebook Political Ad Collector" */;
+			buildConfigurationList = 2AB0911220326E34000D8A0C /* Build configuration list for PBXProject "SafariExtension" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -285,8 +300,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A59E6B720347FC000869122 /* Main.storyboard in Resources */,
+				2ACF3E1F2034436A005E4C6C /* content in Resources */,
 				2AB0911F20326E34000D8A0C /* Assets.xcassets in Resources */,
-				2AB0912220326E34000D8A0C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A6BD5F82034278200A0A094 /* MessagingWebView.swift in Sources */,
+				2A8992EC2034886800109A0E /* WebView+GetContentSize.swift in Sources */,
 				2A6BD5F22033625400A0A094 /* BackgroundScript.swift in Sources */,
 				2A9CB8EA20326E9100E49BA7 /* ExtensionPopoverViewController.swift in Sources */,
 				2A9CB8E820326E9100E49BA7 /* SafariExtensionHandler.swift in Sources */,
@@ -313,6 +330,7 @@
 			files = (
 				2AB0911D20326E34000D8A0C /* ViewController.swift in Sources */,
 				2AB0911B20326E34000D8A0C /* AppDelegate.swift in Sources */,
+				2A8992EB2034886800109A0E /* WebView+GetContentSize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,14 +356,6 @@
 				2A9CB8EC20326E9100E49BA7 /* Base */,
 			);
 			name = ExtensionPopoverViewController.xib;
-			sourceTree = "<group>";
-		};
-		2AB0912020326E34000D8A0C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2AB0912120326E34000D8A0C /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -383,7 +393,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.propublica.Facebook-Political-Ad-Collector.Ad-Collector-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 			};
@@ -495,7 +504,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
@@ -506,7 +514,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = G8YUU89437;
@@ -524,7 +531,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = G8YUU89437;
@@ -581,7 +587,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2AB0911220326E34000D8A0C /* Build configuration list for PBXProject "Facebook Political Ad Collector" */ = {
+		2AB0911220326E34000D8A0C /* Build configuration list for PBXProject "SafariExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2AB0912520326E34000D8A0C /* Debug */,

@@ -31,39 +31,24 @@ class ExtensionPopoverViewController: SFSafariExtensionViewController {
 }
 
 
-// MARK: - Resizing
-
-extension ExtensionPopoverViewController: WKNavigationDelegate {
-    // Resize the popover to match the size of document.body
-    private func resizeToContent() {
-        let js = "let css = window.getComputedStyle(document.body); [ css.width, css.height ]"
-        webView.evaluateJavaScript(js) {
-            result, error in
-            
-            guard let result = result as? [String], error == nil else {
-                NSLog("Failed to get preferred content size: \(error?.localizedDescription ?? "unknown")")
-                return
-            }
-            
-            let width = (result[0] as NSString).floatValue
-            let height = (result[1] as NSString).floatValue
-            self.view.frame.size = NSMakeSize(CGFloat(width), CGFloat(height))
-            self.preferredContentSize = self.view.frame.size
-        }
-    }
-    
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        // Keep the popover's size constrained to document.body
-        resizeToContent()
-    }
-}
-
-
 // MARK: - Messaging
 
 extension ExtensionPopoverViewController: MessageDispatchTarget {
     func pushMessage(_ message: String, sender: String) {
         guard webView != nil else { return }
         webView.pushMessage(message, sender: sender)
+    }
+}
+
+
+// MARK: - Resize to Fit
+
+extension ExtensionPopoverViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        // Keep the popover's size constrained to document.body
+        webView.getContentSize() { size in
+            self.view.frame.size = size
+            self.preferredContentSize = size
+        }
     }
 }
