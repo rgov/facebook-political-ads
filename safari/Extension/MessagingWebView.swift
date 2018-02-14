@@ -89,12 +89,14 @@ extension MessagingWebView: MessageDispatchTarget {
     }
     
     func pushMessage(_ message: String, sender: String) {
-        self.evaluateJavaScript("glue.receiveMessage('\(escape(sender))', '\(escape(message))')") {
-            _, error in
-            
-            guard error == nil else {
-                NSLog("MessagingWebView.pushMessage() failed: \(error?.localizedDescription ?? "unknown")")
-                return
+        DispatchQueue.main.async {
+            self.evaluateJavaScript("glue.receiveMessage('\(escape(sender))', '\(escape(message))')") {
+                _, error in
+                
+                guard error == nil else {
+                    NSLog("MessagingWebView.pushMessage() failed: \(error?.localizedDescription ?? "unknown")")
+                    return
+                }
             }
         }
     }
