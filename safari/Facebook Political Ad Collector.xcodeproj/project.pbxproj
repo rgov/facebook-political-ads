@@ -11,10 +11,11 @@
 		2A6BD5F22033625400A0A094 /* BackgroundScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BD5F12033625400A0A094 /* BackgroundScript.swift */; };
 		2A6BD5F42033FCAB00A0A094 /* BackgroundScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BD5F32033FCAB00A0A094 /* BackgroundScriptManager.swift */; };
 		2A6BD5F62033FEA700A0A094 /* ExtensionManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BD5F52033FEA700A0A094 /* ExtensionManifest.swift */; };
+		2A6BD5F82034278200A0A094 /* MessagingWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BD5F72034278200A0A094 /* MessagingWebView.swift */; };
 		2A9CB8E520326E9000E49BA7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9CB8E420326E9000E49BA7 /* Cocoa.framework */; };
 		2A9CB8E820326E9100E49BA7 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB8E720326E9100E49BA7 /* SafariExtensionHandler.swift */; };
-		2A9CB8EA20326E9100E49BA7 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB8E920326E9100E49BA7 /* SafariExtensionViewController.swift */; };
-		2A9CB8ED20326E9100E49BA7 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A9CB8EB20326E9100E49BA7 /* SafariExtensionViewController.xib */; };
+		2A9CB8EA20326E9100E49BA7 /* ExtensionPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB8E920326E9100E49BA7 /* ExtensionPopoverViewController.swift */; };
+		2A9CB8ED20326E9100E49BA7 /* ExtensionPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A9CB8EB20326E9100E49BA7 /* ExtensionPopoverViewController.xib */; };
 		2A9CB8F620326E9100E49BA7 /* Ad Collector Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A9CB8E220326E9000E49BA7 /* Ad Collector Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2AB0911B20326E34000D8A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0911A20326E34000D8A0C /* AppDelegate.swift */; };
 		2AB0911D20326E34000D8A0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0911C20326E34000D8A0C /* ViewController.swift */; };
@@ -62,11 +63,12 @@
 		2A6BD5F12033625400A0A094 /* BackgroundScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundScript.swift; sourceTree = "<group>"; };
 		2A6BD5F32033FCAB00A0A094 /* BackgroundScriptManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundScriptManager.swift; sourceTree = "<group>"; };
 		2A6BD5F52033FEA700A0A094 /* ExtensionManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionManifest.swift; sourceTree = "<group>"; };
+		2A6BD5F72034278200A0A094 /* MessagingWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingWebView.swift; sourceTree = "<group>"; };
 		2A9CB8E220326E9000E49BA7 /* Ad Collector Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Ad Collector Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9CB8E420326E9000E49BA7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2A9CB8E720326E9100E49BA7 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
-		2A9CB8E920326E9100E49BA7 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
-		2A9CB8EC20326E9100E49BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
+		2A9CB8E920326E9100E49BA7 /* ExtensionPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPopoverViewController.swift; sourceTree = "<group>"; };
+		2A9CB8EC20326E9100E49BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ExtensionPopoverViewController.xib; sourceTree = "<group>"; };
 		2A9CB8EE20326E9100E49BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AB0911720326E34000D8A0C /* Facebook Political Ad Collector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Facebook Political Ad Collector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AB0911A20326E34000D8A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,13 +116,14 @@
 				2AE9A29F20327A52000DED5B /* dist */,
 				2A6BD5C9203329EB00A0A094 /* build_dist.sh */,
 				2AE9A2AC2032EF66000DED5B /* safariglue.js */,
+				2A6BD5F52033FEA700A0A094 /* ExtensionManifest.swift */,
 				2A6BD5EB2033338B00A0A094 /* Messaging.swift */,
+				2A6BD5F72034278200A0A094 /* MessagingWebView.swift */,
 				2A9CB8E720326E9100E49BA7 /* SafariExtensionHandler.swift */,
-				2A9CB8E920326E9100E49BA7 /* SafariExtensionViewController.swift */,
-				2A9CB8EB20326E9100E49BA7 /* SafariExtensionViewController.xib */,
+				2A9CB8E920326E9100E49BA7 /* ExtensionPopoverViewController.swift */,
+				2A9CB8EB20326E9100E49BA7 /* ExtensionPopoverViewController.xib */,
 				2A6BD5F32033FCAB00A0A094 /* BackgroundScriptManager.swift */,
 				2A6BD5F12033625400A0A094 /* BackgroundScript.swift */,
-				2A6BD5F52033FEA700A0A094 /* ExtensionManifest.swift */,
 				2A9CB8EE20326E9100E49BA7 /* Info.plist */,
 				2AE9A2AB2032C3E8000DED5B /* Extension.entitlements */,
 			);
@@ -272,7 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A9CB8ED20326E9100E49BA7 /* SafariExtensionViewController.xib in Resources */,
+				2A9CB8ED20326E9100E49BA7 /* ExtensionPopoverViewController.xib in Resources */,
 				2AE9A2AD2032EF66000DED5B /* safariglue.js in Resources */,
 				2AE9A2A020327A53000DED5B /* dist in Resources */,
 			);
@@ -294,8 +297,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A6BD5F82034278200A0A094 /* MessagingWebView.swift in Sources */,
 				2A6BD5F22033625400A0A094 /* BackgroundScript.swift in Sources */,
-				2A9CB8EA20326E9100E49BA7 /* SafariExtensionViewController.swift in Sources */,
+				2A9CB8EA20326E9100E49BA7 /* ExtensionPopoverViewController.swift in Sources */,
 				2A9CB8E820326E9100E49BA7 /* SafariExtensionHandler.swift in Sources */,
 				2A6BD5EC2033338B00A0A094 /* Messaging.swift in Sources */,
 				2A6BD5F62033FEA700A0A094 /* ExtensionManifest.swift in Sources */,
@@ -328,12 +332,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2A9CB8EB20326E9100E49BA7 /* SafariExtensionViewController.xib */ = {
+		2A9CB8EB20326E9100E49BA7 /* ExtensionPopoverViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2A9CB8EC20326E9100E49BA7 /* Base */,
 			);
-			name = SafariExtensionViewController.xib;
+			name = ExtensionPopoverViewController.xib;
 			sourceTree = "<group>";
 		};
 		2AB0912020326E34000D8A0C /* Main.storyboard */ = {

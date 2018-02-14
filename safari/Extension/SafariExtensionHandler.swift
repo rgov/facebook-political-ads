@@ -21,7 +21,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         // chrome.runtime.sendMessage() says that it doesn't send to content
         // scripts (such messages should be sent to a specific tab)
         dispatcher.clients.append(BackgroundScriptManager.default)
-        dispatcher.clients.append(SafariExtensionViewController.shared)
+        dispatcher.clients.append(ExtensionPopoverViewController.shared)
     }
     
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
@@ -67,7 +67,7 @@ extension SafariExtensionHandler {
     }
     
     override func popoverViewController() -> SFSafariExtensionViewController {
-        return SafariExtensionViewController.shared
+        return ExtensionPopoverViewController.shared
     }
 
 }
