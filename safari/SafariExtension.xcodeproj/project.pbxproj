@@ -376,7 +376,7 @@
 				DEVELOPMENT_TEAM = G8YUU89437;
 				INFOPLIST_FILE = Extension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.propublica.Facebook-Political-Ad-Collector.Ad-Collector-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = org.propublica.FacebookAdCollector.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -394,7 +394,7 @@
 				DEVELOPMENT_TEAM = G8YUU89437;
 				INFOPLIST_FILE = Extension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.propublica.Facebook-Political-Ad-Collector.Ad-Collector-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = org.propublica.FacebookAdCollector.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -523,7 +523,7 @@
 				DEVELOPMENT_TEAM = G8YUU89437;
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.propublica.Facebook-Political-Ad-Collector";
+				PRODUCT_BUNDLE_IDENTIFIER = org.propublica.FacebookAdCollector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -540,7 +540,7 @@
 				DEVELOPMENT_TEAM = G8YUU89437;
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.propublica.Facebook-Political-Ad-Collector";
+				PRODUCT_BUNDLE_IDENTIFIER = org.propublica.FacebookAdCollector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
